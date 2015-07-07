@@ -1,0 +1,2 @@
+#!/usr/bin/env node
+require('../wn2.js').cli.run( process.argv );

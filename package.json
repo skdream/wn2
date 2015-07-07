@@ -1,0 +1,29 @@
+{
+  "name": "wn2",
+  "version": "0.0.1",
+  "description": "a web's scaffolding tool based on FIS ",
+  "main": "wn2.js",
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skdream/wn2.git"
+  },
+  "keywords": [
+    "fis",
+    "wn2"
+  ],
+  "author": "snail-team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skdream/wn2/issues"
+  },
+  "homepage": "https://github.com/skdream/wn2",
+  "dependencies": {
+    "fis": "^1.9.28",
+    "fis-parser-less": "0.1.2",
+    "fis-parser-sass": "0.3.8",
+    "wn2-command-init": "0.0.x"
+  }
+}
