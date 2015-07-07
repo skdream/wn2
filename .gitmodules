@@ -1,0 +1,3 @@
+[submodule "node_modules/wn2-command-init"]
+	path = node_modules/wn2-command-init
+	url = https://github.com/skdream/wn2-command-init.git

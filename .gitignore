@@ -1,6 +1,7 @@
 ﻿/.idea
 node_modules/
 
+fis/
 .DS_Store
 *.db
 *.bak
