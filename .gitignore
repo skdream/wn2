@@ -1,6 +1,6 @@
 ﻿node_modules/
 node_modules/fis/
-.bin/
+node_modules/.bin/
 /.idea
 .DS_Store
 *.db
