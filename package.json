@@ -1,10 +1,13 @@
 {
   "name": "wn2",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "a web's scaffolding tool based on FIS3 ",
   "main": "index.js",
   "scripts": {
     "test": "echo \\\"Error: no test specified\\\" && exit 1"
+  },
+  "bin": {
+    "wn2": "./bin/wn2.js"
   },
   "repository": {
     "type": "git",

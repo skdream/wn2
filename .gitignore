@@ -1,7 +1,4 @@
-﻿**/*/.bin
-bin/
-bin
-node_modules/
+node_modules
 node_modules/fis/
 /.idea
 .DS_Store
