@@ -1,8 +1,8 @@
 {
   "name": "wn2",
   "version": "0.0.1",
-  "description": "a web's scaffolding tool based on FIS ",
-  "main": "wn2.js",
+  "description": "a web's scaffolding tool based on FIS3 ",
+  "main": "index.js",
   "scripts": {
     "test": "echo \\\"Error: no test specified\\\" && exit 1"
   },
@@ -21,9 +21,13 @@
   },
   "homepage": "https://github.com/skdream/wn2",
   "dependencies": {
-    "fis": "^1.9.28",
     "fis-parser-less": "0.1.2",
     "fis-parser-sass": "0.3.8",
+    "fis3": "^3.0.8",
+    "fis3-hook-module": "^1.1.1",
+    "fis3-postpackager-loader": "^1.2.0",
+    "liftoff": "^2.1.0",
+    "minimist": "^1.1.1",
     "wn2-command-init": "0.0.x"
   }
 }

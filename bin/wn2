@@ -1,2 +1,15 @@
-#!/usr/bin/env node
-require('../wn2.js').cli.run( process.argv );
+#!/bin/sh
+basedir=`dirname "$0"`
+
+case `uname` in
+    *CYGWIN*) basedir=`cygpath -w "$basedir"`;;
+esac
+
+if [ -x "$basedir/node" ]; then
+  "$basedir/node"  "$basedir/wn2.js" "$@"
+  ret=$?
+else 
+  node  "$basedir/wn2.js" "$@"
+  ret=$?
+fi
+exit $ret
