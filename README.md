@@ -16,7 +16,7 @@ npm install -g cnpm
 cnpm install -g wn2
 
 
-##使用方法：
+## 使用方法：
 
 
 1.初始化项目,选择项目模板。
