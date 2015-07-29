@@ -9,14 +9,14 @@ a web's scaffolding tool based on FIS
 开发完成后可以一键发布到测试环境或生产环境，发布的同时，生产环境自动压缩合并文件。
 
 
-## 安装方法：
+### 安装方法：
 
 npm install -g cnpm
 
 cnpm install -g wn2
 
 
-## 使用方法：
+### 使用方法：
 
 
 1.初始化项目,选择项目模板。
