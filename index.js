@@ -29,7 +29,7 @@ fis
     // fis-optimizer-uglify-js 插件进行压缩，已内置
     optimizer: fis.plugin('uglify-js')
   })
-   .match('!**/*.min.js', {
+   .match('**/*.min.js', {
     // fis-optimizer-uglify-js 插件进行压缩，已内置
     optimizer: null
   })
@@ -47,38 +47,61 @@ fis
 fis
   .media('dev')
   .match('**', {
-    useHash: false
-  })
-  .match('**/*.js', {
-   optimizer: null
+    useHash: false,
+    useSprite: false,
+    optimizer: null
   })
 
 // 内网
 fis.media('qa')
-  .match('*.{js,css,png}', {
-    useHash: false
+  .match('**.{js,css,png}', {
+    useHash: false,
+    useSprite: false,
+    optimizer: null
   })
+  .match('*.scss', {release: false})
+  .match('*.text', {release: false})
 
 // 专题生产环境
 fis
   .media('actProd')
-  .match('*.{js,css,png}', {
+  .match('*.scss', {release: false})
+  .match('*.text', {release: false})
+  .match('**.{js,css,png}', {
     useHash: true
   })
-  .match('::package', { //基于页面的打包方式
-    postpackager: fis.plugin('loader', {
-      allInOne: true
-    })
+  .match('images/*.png', {
+    optimizer: fis.plugin('png-compressor')
   })
-  .match('css/**.css', {
-    packTo: '/pkg/index_packed.css'
+  .match('css/*.css', {
+    useSprite: true,
+    packTo: 'css/index_packed.css'
   })
-  .match('js/**.js', {
-    packTo: '/pkg/app_packed.js'
+  .match('js/*.js', {
+    packTo: 'js/app_packed.js',
+    optimizer: fis.plugin('uglify-js')
   })
   .match('js/lib/**.js', {
-    packTo: '/pkg/lib_packed.js'
-  });
+    packTo: 'js/lib_packed.js',
+    optimizer: fis.plugin('uglify-js')
+  })
+  .match('**.js', {
+    // fis-optimizer-uglify-js 插件进行压缩，已内置
+    optimizer: fis.plugin('uglify-js')
+  })
+  .match('**/*.{css,scss}', {
+      optimizer: fis.plugin('clean-css',{
+       'keepBreaks': true
+      }) // fis-optimizer-clean-css 插件进行压缩，已内置
+  })
+  .match('::package', {
+    //基于页面的打包方式
+    postpackager: fis.plugin('loader', {
+      allInOne: true
+    }),
+    packager: fis.plugin('map'),
+    spriter: fis.plugin('csssprites')
+  })
 
 // 官网生产环境
 
@@ -86,4 +109,25 @@ fis
   .media('siteProd')
   .match('*.{js,css,png}', {
     useHash: true
+  })
+  .match('images/*.png', {
+    optimizer: fis.plugin('png-compressor')
+  })
+  .match('**/*.{css,scss}', {
+      optimizer: fis.plugin('clean-css',{
+       'keepBreaks': true
+      }) // fis-optimizer-clean-css 插件进行压缩，已内置
+  })
+  .match('**.js', {
+    // fis-optimizer-uglify-js 插件进行压缩，已内置
+    optimizer: fis.plugin('uglify-js')
+  })
+  .match('**.{css,scss}', {
+      optimizer: fis.plugin('clean-css',{
+       'keepBreaks': true
+      }) // fis-optimizer-clean-css 插件进行压缩，已内置
+  })
+  .match('::package', {
+    packager: fis.plugin('map'),
+    spriter: fis.plugin('csssprites')
   })
