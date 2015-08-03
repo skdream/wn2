@@ -1,6 +1,6 @@
 {
   "name": "wn2",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "a web's scaffolding tool based on FIS3 ",
   "main": "index.js",
   "scripts": {
@@ -28,6 +28,7 @@
     "fis-parser-sass": "0.3.8",
     "fis3": "^3.0.8",
     "fis3-hook-module": "^1.1.1",
+    "fis3-hook-relative": "^1.0.3",
     "fis3-postpackager-loader": "^1.2.0",
     "liftoff": "^2.1.0",
     "minimist": "^1.1.1",

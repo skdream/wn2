@@ -68,28 +68,33 @@ fis
   .match('*.scss', {release: false})
   .match('*.text', {release: false})
   .match('**.{js,css}', {
-    useHash: true
+    useHash: true,
   })
-  .match('images/*.png', {
+
+  .match('/images/*.png', {
     optimizer: fis.plugin('png-compressor')
   })
-  .match('css/*.css', {
+  .match('/css/*.css', {
     useSprite: true,
-    packTo: 'css/index_packed.css'
+    packTo: 'css/pkg_index.css'
   })
-  .match('js/*.js', {
-    packTo: 'js/app_packed.js',
+
+  .match('/js/*.js', {
+    packTo: '/js/pkg_index.js',
     optimizer: fis.plugin('uglify-js')
   })
-  .match('js/lib/**.js', {
-    packTo: 'js/lib_packed.js',
+  .match('/js/lib/**.js', {
+    packTo: '/js/pkg_lib.js',
     optimizer: fis.plugin('uglify-js')
   })
   .match('**.js', {
     // fis-optimizer-uglify-js 插件进行压缩，已内置
     optimizer: fis.plugin('uglify-js')
   })
-  .match('**/*.{css,scss}', {
+  .match('*.min.js', {
+    optimizer: null
+  })
+  .match('**.{css,scss}', {
       optimizer: fis.plugin('clean-css',{
        'keepBreaks': true
       }) // fis-optimizer-clean-css 插件进行压缩，已内置
@@ -107,13 +112,13 @@ fis
 
 fis
   .media('siteProd')
-  .match('*.{js,css}', {
+  .match('**.{js,css}', {
     useHash: true
   })
-  .match('images/*.png', {
+  .match('/images/*.png', {
     optimizer: fis.plugin('png-compressor')
   })
-  .match('**/*.{css,scss}', {
+  .match('**.{css,scss}', {
       optimizer: fis.plugin('clean-css',{
        'keepBreaks': true
       }) // fis-optimizer-clean-css 插件进行压缩，已内置
@@ -122,10 +127,8 @@ fis
     // fis-optimizer-uglify-js 插件进行压缩，已内置
     optimizer: fis.plugin('uglify-js')
   })
-  .match('**.{css,scss}', {
-      optimizer: fis.plugin('clean-css',{
-       'keepBreaks': true
-      }) // fis-optimizer-clean-css 插件进行压缩，已内置
+  .match('*.min.js', {
+    optimizer: null
   })
   .match('::package', {
     packager: fis.plugin('map'),
