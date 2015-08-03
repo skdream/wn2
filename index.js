@@ -67,7 +67,7 @@ fis
   .media('actProd')
   .match('*.scss', {release: false})
   .match('*.text', {release: false})
-  .match('**.{js,css,png}', {
+  .match('**.{js,css}', {
     useHash: true
   })
   .match('images/*.png', {
@@ -107,7 +107,7 @@ fis
 
 fis
   .media('siteProd')
-  .match('*.{js,css,png}', {
+  .match('*.{js,css}', {
     useHash: true
   })
   .match('images/*.png', {
