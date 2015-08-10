@@ -51,6 +51,20 @@ fis
     useSprite: false,
     optimizer: null
   })
+  .match('/js/*.js', {
+    packTo: '/js/pkg_index.js',
+    optimizer: fis.plugin('uglify-js')
+  })
+    .match('::package', {
+    //基于页面的打包方式
+    postpackager: fis.plugin('loader', {
+      allInOne: true
+      //,obtainScript:false
+    }),
+    packager: fis.plugin('map'),
+    spriter: fis.plugin('csssprites')
+  })
+
 
 // 内网
 fis.media('qa')
@@ -61,6 +75,9 @@ fis.media('qa')
   })
   .match('*.scss', {release: false})
   .match('*.text', {release: false})
+  .match('**.png', {
+    optimizer: fis.plugin('png-compressor')
+  })
 
 // 专题生产环境
 fis
@@ -70,8 +87,7 @@ fis
   .match('**.{js,css}', {
     useHash: true,
   })
-
-  .match('/images/*.png', {
+  .match('**.png', {
     optimizer: fis.plugin('png-compressor')
   })
   .match('/css/*.css', {
@@ -115,7 +131,7 @@ fis
   .match('**.{js,css}', {
     useHash: true
   })
-  .match('/images/*.png', {
+  .match('**.png', {
     optimizer: fis.plugin('png-compressor')
   })
   .match('**.{css,scss}', {
