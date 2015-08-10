@@ -50,20 +50,7 @@ fis
     useHash: false,
     useSprite: false,
     optimizer: null
-  })
-  .match('/js/*.js', {
-    packTo: '/js/pkg_index.js',
-    optimizer: fis.plugin('uglify-js')
-  })
-    .match('::package', {
-    //基于页面的打包方式
-    postpackager: fis.plugin('loader', {
-      allInOne: true
-      //,obtainScript:false
-    }),
-    packager: fis.plugin('map'),
-    spriter: fis.plugin('csssprites')
-  })
+  });
 
 
 // 内网
