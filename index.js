@@ -50,7 +50,7 @@ fis
     useHash: false,
     useSprite: false,
     optimizer: null
-  });
+  })
 
 
 // 内网
@@ -116,7 +116,7 @@ fis
 fis
   .media('siteProd')
   .match('**.{js,css}', {
-    useHash: true
+    useHash: false
   })
   .match('**.png', {
     optimizer: fis.plugin('png-compressor')
