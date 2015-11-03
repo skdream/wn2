@@ -9,7 +9,7 @@ fis.cli.info = fis.util.readJSON(__dirname + '/package.json');
 fis.cli.help.commands = ['init', 'install', 'release'];
 fis.cli.version = require('./version.js');
 
-fis.set('snailGameList','http://git.woniu.com:3600/woniu.com/snail-game-data/repository/archive.tar');
+fis.set('snailGameList','http://gitlab.woniu.com/woniu.com/snail-game-data/raw/master/snailGames.json');
 
 // 配置API：https://github.com/fex-team/fis3/blob/master/doc/docs/api/config-props.md#release
 
