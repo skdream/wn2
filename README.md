@@ -39,3 +39,31 @@ wn2 init
 - wn2 release actProd // 专题生产环境
 
 - wn2 release siteProd // 官网生产环境
+
+
+
+### 蜗牛移动mobile.snail.com
+
+站点相关的专题活动
+
+- wn2 init
+
+choose a domain:
+   woniu.com
+   snail.com (V)
+
+ choose a template type: (Use arrow keys)
+ m-mobile (蜗牛移动移动版专题)
+ mobile （蜗牛移动pc版专题）
+
+
+
+页面做完后：
+
+- wn2 release qa 发布到内网
+- wn2 release actProd 发布到公网
+
+制作过程中：
+
+- wn2 server start 启动本地调试服务,
+- wn2 release -wL 可以实时监听刷新浏览器
