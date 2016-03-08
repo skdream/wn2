@@ -40,7 +40,11 @@ wn2 init
 
 - wn2 release siteProd // 官网生产环境
 
+### 需要配置host列表
 
+- 10.13.0.195 gitlab.woniu.com #需要加载这个站点的数据
+- 10.17.0.58  production.woniu.com  #发布到生产环境 wn2 release actProd 
+- 10.13.0.205 dev.woniu.com  #发布到测试环境 wn2 release  qa
 
 ### 蜗牛移动mobile.snail.com
 
