@@ -33,10 +33,10 @@ fis
     // fis-optimizer-uglify-js 插件进行压缩，已内置
     optimizer: null
   })
-  .match('**/*.scss', {
-      parser: fis.plugin('sass'), //启用fis-parser-sass插件
-      rExt: '.css'
-  })
+  // .match('**/*.scss', {
+  //     parser: fis.plugin('node-sass'), //启用fis-parser-node-sass插件
+  //     rExt: '.css'
+  // })
   .match('**/*.{css,scss}', {
       optimizer: fis.plugin('clean-css',{
        'keepBreaks': true

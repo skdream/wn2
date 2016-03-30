@@ -39,3 +39,9 @@ wn2 init
 - wn2 release actProd // 专题生产环境
 
 - wn2 release siteProd // 官网生产环境
+
+
+###  升级
+
+Version 0.1.1      2015-11-10
+* update sass parse plugin to node-sass;
